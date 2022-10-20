@@ -39,7 +39,7 @@ function Header() {
     <AppBar position='static'>
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
-          <Icon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}>
+          <Icon sx={{ display: { xs: 'flex', md: 'none' }, mr: 2 }}>
             <img src={logo} height={25} width={25} />
           </Icon>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

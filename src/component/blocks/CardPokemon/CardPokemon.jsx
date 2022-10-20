@@ -18,12 +18,20 @@ const CardPokemon = ({ data, loading }) => {
           <NumberStyled># {data.id && padDigits(data.id)}</NumberStyled>
         )}
 
-        {loading === 'loading' ? (
+        {loading ? (
           <Skeleton animation='wave' variant='text' width={125} height={43} />
         ) : (
           <Title as='h2'>{formatTextToCapitalize(data.name)}</Title>
         )}
         <TypesPokemon loading={loading} data={data.types} />
+      </div>
+
+      <div>
+        {loading ? (
+          <Skeleton animation='wave' variant='circle' width={96} height={96} />
+        ) : (
+          <>{data.img && <img src={data.img} alt={data.name} />}</>
+        )}
       </div>
     </Wrapper>
   )
@@ -31,6 +39,6 @@ const CardPokemon = ({ data, loading }) => {
 
 CardPokemon.propTypes = {
   data: PropTypes.any,
-  loading: PropTypes.any
+  loading: PropTypes.bool
 }
 export default CardPokemon

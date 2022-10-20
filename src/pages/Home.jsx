@@ -1,9 +1,9 @@
-import { useSelector, useDispatch } from 'react-redux'
+import { useEffect } from 'react'
 import { Box as BoxStyled } from './styles'
 import CardPokemon from '../component/blocks/CardPokemon'
-import { useEffect } from 'react'
-
+import { useSelector, useDispatch } from 'react-redux'
 import { initPokemon } from '../store/pokemon/listPokemon'
+
 const Home = () => {
   const pokemons = useSelector(state => state.listPokemon.pokemons)
   const loading = useSelector(state => state.listPokemon.loading)
